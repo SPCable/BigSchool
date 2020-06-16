@@ -20,11 +20,6 @@ namespace NguyenNhatTruong_BigSchool.Controllers
 
         public object Categories { get; private set; }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // GET: Courses
         [Authorize]
         [HttpPost]
