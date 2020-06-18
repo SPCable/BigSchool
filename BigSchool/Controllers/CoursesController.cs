@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace BigSchool.Controllers
 {
@@ -30,9 +31,13 @@ namespace BigSchool.Controllers
 
         [Authorize]
         [HttpPost]
-
         public ActionResult Create(CourseViewModel viewModel)
         {
+            if(!ModelState.IsValid)
+            {
+                viewModel.Categories = _dbContext.Categories.ToList();
+                return View("Create", viewModel);
+            }
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
