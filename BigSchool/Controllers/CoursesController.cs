@@ -29,15 +29,15 @@ namespace BigSchool.Controllers
             return View(viewModel);
         }
 
-        [Authorize]
+
         [HttpPost]
         public ActionResult Create(CourseViewModel viewModel)
         {
-            if(!ModelState.IsValid)
-            {
-                viewModel.Categories = _dbContext.Categories.ToList();
-                return View("Create", viewModel);
-            }
+            //if(!ModelState.IsValid)
+            //{
+            //    viewModel.Categories = _dbContext.Categories.ToList();
+            //    return View("Create", viewModel);
+            //}
             var course = new Course
             {
                 LecturerId = User.Identity.GetUserId(),
