@@ -1,0 +1,22 @@
+﻿@model IEnumerable<BigSchool.Models.Course>
+@{
+    ViewBag.Title = "LectureFlowing";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LectureFlowing</h2>
+
+<ul class="course">
+    @foreach (var course in Model)
+    {
+        <li>
+            <div class=" details">
+                <div class="lecturer">
+                    @course.Lecturer.Name
+                </div>
+            </div>
+
+        </li>
+    }
+</ul>
+
