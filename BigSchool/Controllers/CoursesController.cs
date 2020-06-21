@@ -13,6 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace BigSchool.Controllers
 {
+    //truong
     public class CoursesController : Controller
     {
         [Authorize]
